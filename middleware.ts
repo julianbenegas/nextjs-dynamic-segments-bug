@@ -12,8 +12,10 @@ export function middleware(request: NextRequest) {
   }
 
   if (url.pathname !== "/") {
-    url.pathname = "/public" + url.pathname;
-    return NextResponse.rewrite(url);
+    const rewriteTo = "/public" + url.pathname;
+    return NextResponse.rewrite(
+      new URL(rewriteTo + request.nextUrl.search, request.nextUrl.origin)
+    );
   }
 
   return NextResponse.next();
