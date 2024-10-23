@@ -1,23 +1,16 @@
 export const dynamic = "force-static";
+export const dynamicParams = true;
 
-interface PageParams {
-  "team-slug": string;
-}
-
-const Page = async ({ params }: { params: Promise<PageParams> }) => {
+const Page = async ({ params }) => {
   const resolvedParams = await params;
   console.log(resolvedParams);
   return <div>{JSON.stringify(resolvedParams)}</div>;
 };
 
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<PageParams>;
-}) => {
+export const generateMetadata = async ({ params }) => {
   const resolvedParams = await params;
   console.log(resolvedParams);
-  return { title: resolvedParams["team-slug"] };
+  return { title: "hello" };
 };
 
 export const generateStaticParams = () => {
