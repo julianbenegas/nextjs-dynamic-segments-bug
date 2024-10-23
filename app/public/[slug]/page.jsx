@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 const Page = async ({ params: _params }) => {
   const params = await _params;
   console.log(params);
