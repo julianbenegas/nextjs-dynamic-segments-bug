@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
@@ -8,7 +7,7 @@ export function middleware(request: NextRequest) {
   console.log(url.pathname);
 
   if (url.pathname.startsWith("/public")) {
-    notFound();
+    return NextResponse.next();
   }
 
   if (url.pathname !== "/") {
