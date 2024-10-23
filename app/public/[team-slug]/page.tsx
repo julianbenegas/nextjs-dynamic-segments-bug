@@ -20,7 +20,7 @@ export const generateMetadata = async ({
   return { title: resolvedParams["team-slug"] };
 };
 
-export const generateStaticParams = () => {
+export const generateStaticParams = async () => {
   return [];
 };
 
