@@ -14,7 +14,7 @@ export const generateMetadata = async ({ params }) => {
 };
 
 export const generateStaticParams = () => {
-  return [];
+  return [{ "doesnt-work": "pregenerated" }];
 };
 
 export default Page;
